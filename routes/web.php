@@ -19,15 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function ()  {
-
-    $team = [
-        ['name' => 'Hodor', 'position' => 'programmer'],
-        ['name' => 'Joker', 'position' => 'CEO'],
-        ['name' => 'Elvis', 'position' => 'CTO'],
-    ];
-
-    // BEGIN (write your solution here)
-    return view("about",['team' => $team]);
-    // END
-});
+Route::get('about', [App\Http\Controllers\PageController::class,'index']);
